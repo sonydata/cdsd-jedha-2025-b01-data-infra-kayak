@@ -28,7 +28,7 @@ Mont Saint Michel, St Malo, Bayeux, Le Havre, Rouen, Paris, Amiens, Lille, Stras
 - **Weather:** OpenWeather One-Call (7-day daily: `temp`, `pop`, `rain`, `humidity`, `clouds`, `wind`).
 - **Hotels (Booking.com):** name, URL, coords, rating, reviews, description, facilities, address, distance.
 
-**Weather filter (heuristics):**
+**Weather filter:**
 - `avg_max_temp > 10°C`
 - `rain_prob ≤ 0.25`
 - `avg_clouds < 55%`
@@ -36,18 +36,7 @@ Mont Saint Michel, St Malo, Bayeux, Le Havre, Rouen, Paris, Amiens, Lille, Stras
 
 ---
 
-## 🗺️ Maps
-| Top 5 destinations | Top 20 hotels |
-|---|---|
-| ![Top 5](maps/Top5destinations.png) | ![Top 20](maps/top20hotels.png) |
-
-### 🔗 Interactive maps (GitHub Pages)
-- [Top 5 destinations (HTML)](https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top5destinations.html)
-- [Top 20 hotels (HTML)](https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top20hotels-v2.html)
-
----
-
-## 🔄 Pipeline (high level)
+## 🔄 Pipeline 
 1. **Ingest (Python/Colab):** cities → Nominatim (coords) → OpenWeather (7-day) + Booking scrape (hotels).
 2. **Data Lake (S3):** store raw/enriched CSVs.
 3. **ETL → DWH (AWS RDS):** normalize schemas & types, select/validate fields, enrich via City_ID join, then load curated tables with repeatable (idempotent) upserts.
@@ -58,7 +47,18 @@ Mont Saint Michel, St Malo, Bayeux, Le Havre, Rouen, Paris, Amiens, Lille, Stras
 ## 📦 Deliverables
 - **S3 CSVs:** enriched weather data + hotels + `city_id`.  See [`files for S3/`](./files%20for%20S3/)
   ![AWS S3 Bucket](S3bucket_content.png)
-- **AWS RDS:** cleaned merged table.
-- **Maps:** Top-5 destinations & Top-20 hotels (PNG + HTML).
+- **AWS RDS:** cleaned merged table loaded in the Data Warehouse: `clean_hotel_weather_data_RDS.csv`
+- ** 🗺️ Maps:** Top-5 destinations & Top-20 hotels (PNG + HTML).
+
+| Top 5 destinations | Top 20 hotels |
+|---|---|
+| ![Top 5](maps/Top5destinations.png) | ![Top 20](maps/top20hotels.png) |
+
+### 🔗 Interactive maps (GitHub Pages)
+- [Top 5 destinations (HTML)](https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top5destinations.html)
+- [Top 20 hotels (HTML)](https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top20hotels-v2.html)
+- 
+#### Open the map notebook in Colab
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/107LhXhZRFf22gu39KB2NhP3dPIQyRocl?usp=sharing)
 
 ---

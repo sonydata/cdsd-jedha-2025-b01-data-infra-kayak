@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5127a2e467a59df1edc8e5d4b7ee7003 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5127a2e467a59df1edc8e5d4b7ee7003" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5127a2e467a59df1edc8e5d4b7ee7003 = L.map(
+                "map_5127a2e467a59df1edc8e5d4b7ee7003",
+                {
+                    center: [43.89668393333333, 3.9597358000000002],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7608944714193b6600db6425e24f7ce1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7608944714193b6600db6425e24f7ce1.addTo(map_5127a2e467a59df1edc8e5d4b7ee7003);
+        
+    
+            var marker_cluster_ac96cf59a783287f31b469940ed2c8d6 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_0adc941d524248b1d5df2e0dfe273a86 = L.marker(
+                [43.524682, 5.45039],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_8596ecf3715444ff7c82d19f0cb1dd30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e6d5bb01ce65704d0acb57fa574be063 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_0f9340a32a4ca99e7b34fa1179c66e35 = $(`<div id="html_0f9340a32a4ca99e7b34fa1179c66e35" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>La Maison d&#x27;Aix 1785 - Hôtel Particulier &amp; Spa</b><br>       <span>📍 Aix en Provence</span><br>       <span>⭐ 9.4/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Indoor swimming pool, Parking, Spa, Free Wifi, Family rooms, Non-smoking rooms, Airport shuttle, Bar, Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/la-maison-d-aix.html?aid=304142&amp;label=gen173nr-10CAQoggJCFnNlYXJjaF9haXggZW4gcHJvdmVuY2VIM1gEaE2IAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AsGM_sQGwAIB0gIkNDI0Y2UzMGQtMGY3Mi00MjhiLWEwMjAtN2M4YTNlOTQwYjEw2AIB4AIB&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=10&amp;hapos=10&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=52a986e0789f0695&amp;srepoch=1755285123&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_e6d5bb01ce65704d0acb57fa574be063.setContent(html_0f9340a32a4ca99e7b34fa1179c66e35);
+            
+        
+
+        marker_0adc941d524248b1d5df2e0dfe273a86.bindPopup(popup_e6d5bb01ce65704d0acb57fa574be063)
+        ;
+
+        
+    
+    
+            marker_0adc941d524248b1d5df2e0dfe273a86.bindTooltip(
+                `<div>
+                     La Maison d'Aix 1785 - Hôtel Particulier & Spa — Aix en Provence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0adc941d524248b1d5df2e0dfe273a86.setIcon(icon_8596ecf3715444ff7c82d19f0cb1dd30);
+            
+    
+            var marker_03d4fb41a830df16bc9ead9a6bea2f40 = L.marker(
+                [43.523068, 5.457699],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_2ef5cb67dfc2fdb8145b96bc7161a6a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_59026a30b06c7bf030db85cbd2464ce1 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d71ee247dd77f83a73796210b9f11c02 = $(`<div id="html_d71ee247dd77f83a73796210b9f11c02" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Villa Saint-Ange</b><br>       <span>📍 Aix en Provence</span><br>       <span>⭐ 9.3/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Outdoor swimming pool, Private Parking, Spa, Free Wifi, Restaurant, Fitness center, Non-smoking rooms, Facilities for disabled guests, Airport shuttle, Exceptional Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/villa-saint-ange.html?aid=304142&amp;label=gen173nr-10CAQoggJCFnNlYXJjaF9haXggZW4gcHJvdmVuY2VIM1gEaE2IAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AsGM_sQGwAIB0gIkNDI0Y2UzMGQtMGY3Mi00MjhiLWEwMjAtN2M4YTNlOTQwYjEw2AIB4AIB&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=6&amp;hapos=6&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=52a986e0789f0695&amp;srepoch=1755285100&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_59026a30b06c7bf030db85cbd2464ce1.setContent(html_d71ee247dd77f83a73796210b9f11c02);
+            
+        
+
+        marker_03d4fb41a830df16bc9ead9a6bea2f40.bindPopup(popup_59026a30b06c7bf030db85cbd2464ce1)
+        ;
+
+        
+    
+    
+            marker_03d4fb41a830df16bc9ead9a6bea2f40.bindTooltip(
+                `<div>
+                     Villa Saint-Ange — Aix en Provence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03d4fb41a830df16bc9ead9a6bea2f40.setIcon(icon_2ef5cb67dfc2fdb8145b96bc7161a6a6);
+            
+    
+            var marker_268e969b1156948bb64d300a8fa8507d = L.marker(
+                [43.524775, 5.450224],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_576f0ab1d2bbfdd50a83f450f4f2e225 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01346273899fc446887f30146d1f2294 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f05c39feabde19add84b21e497857093 = $(`<div id="html_f05c39feabde19add84b21e497857093" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Hôtel Particulier Le 28 - Spa &amp; Art Luxury Design by Alain Ducasse</b><br>       <span>📍 Aix en Provence</span><br>       <span>⭐ 9.0/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Indoor swimming pool, Private Parking, Spa, Free Wifi, Family rooms, Restaurant, Non-smoking rooms, Airport shuttle, Bar, Very Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/particulier-28-a-aix-aix-en-provence1.html?aid=304142&amp;label=gen173nr-10CAQoggJCFnNlYXJjaF9haXggZW4gcHJvdmVuY2VIM1gEaE2IAQGYATO4AQfIAQzYAQPoAQH4AQGIAgGoAgG4AsGM_sQGwAIB0gIkNDI0Y2UzMGQtMGY3Mi00MjhiLWEwMjAtN2M4YTNlOTQwYjEw2AIB4AIB&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=8&amp;hapos=8&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=52a986e0789f0695&amp;srepoch=1755285111&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_01346273899fc446887f30146d1f2294.setContent(html_f05c39feabde19add84b21e497857093);
+            
+        
+
+        marker_268e969b1156948bb64d300a8fa8507d.bindPopup(popup_01346273899fc446887f30146d1f2294)
+        ;
+
+        
+    
+    
+            marker_268e969b1156948bb64d300a8fa8507d.bindTooltip(
+                `<div>
+                     Hôtel Particulier Le 28 - Spa & Art Luxury Design by Alain Ducasse — Aix en Provence
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_268e969b1156948bb64d300a8fa8507d.setIcon(icon_576f0ab1d2bbfdd50a83f450f4f2e225);
+            
+    
+            var marker_bf2446e8c55bb77c96c75b12027c83c5 = L.marker(
+                [43.947618, 4.806804],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_9fa492ca9dccd29afe7c3629effbee56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9b12821d54e382b1bd5c4386f647a75 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_4b4ac802598db15daee49a3d40eddf20 = $(`<div id="html_4b4ac802598db15daee49a3d40eddf20" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Garlande Hôtel Avignon Centre</b><br>       <span>📍 Avignon</span><br>       <span>⭐ 8.9/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Free Wifi, Non-smoking rooms, Facilities for disabled guests, Airport shuttle, Very Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/de-garlande.html?aid=304142&amp;label=gen173nr-10CAQoggJCDnNlYXJjaF9hdmlnbm9uSDNYBGhNiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALnjf7EBsACAdICJDZmMTI3OWY2LThkYzctNGY5Zi1iMjJhLWM1ZjdiZDg5MDNkMNgCAeACAQ&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=25&amp;hapos=25&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=4bad8733144701d2&amp;srepoch=1755285395&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_d9b12821d54e382b1bd5c4386f647a75.setContent(html_4b4ac802598db15daee49a3d40eddf20);
+            
+        
+
+        marker_bf2446e8c55bb77c96c75b12027c83c5.bindPopup(popup_d9b12821d54e382b1bd5c4386f647a75)
+        ;
+
+        
+    
+    
+            marker_bf2446e8c55bb77c96c75b12027c83c5.bindTooltip(
+                `<div>
+                     Garlande Hôtel Avignon Centre — Avignon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bf2446e8c55bb77c96c75b12027c83c5.setIcon(icon_9fa492ca9dccd29afe7c3629effbee56);
+            
+    
+            var marker_aba698cd234bbc98875af33d0a166d29 = L.marker(
+                [43.932979, 4.831907],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_7253ef2d852d8809cb83819e4664d6d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a476dcc03c44930fb8ec262d6896758c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e9fc318b83d1ac974b8d7e804621fa6a = $(`<div id="html_e9fc318b83d1ac974b8d7e804621fa6a" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>COWOOL AVIGNON</b><br>       <span>📍 Avignon</span><br>       <span>⭐ 8.8/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Private Parking, Free Wifi, Family rooms, Fitness center, Non-smoking rooms, Facilities for disabled guests, Garden</li></ul>       <a href="https://www.booking.com/hotel/fr/cowool-avignon.html?aid=304142&amp;label=gen173nr-10CAQoggJCDnNlYXJjaF9hdmlnbm9uSDNYBGhNiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALnjf7EBsACAdICJDZmMTI3OWY2LThkYzctNGY5Zi1iMjJhLWM1ZjdiZDg5MDNkMNgCAeACAQ&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=21&amp;hapos=21&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=4bad8733144701d2&amp;srepoch=1755285363&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_a476dcc03c44930fb8ec262d6896758c.setContent(html_e9fc318b83d1ac974b8d7e804621fa6a);
+            
+        
+
+        marker_aba698cd234bbc98875af33d0a166d29.bindPopup(popup_a476dcc03c44930fb8ec262d6896758c)
+        ;
+
+        
+    
+    
+            marker_aba698cd234bbc98875af33d0a166d29.bindTooltip(
+                `<div>
+                     COWOOL AVIGNON — Avignon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aba698cd234bbc98875af33d0a166d29.setIcon(icon_7253ef2d852d8809cb83819e4664d6d0);
+            
+    
+            var marker_1aac554b6f92f946ada4a60f1691b6b4 = L.marker(
+                [43.975484, 4.827437],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_f8481c420e102c00e0f0eeb87da37b1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_acd2df781b578111619f7258880d02ef = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_369f8057c7345455090887b646ec8069 = $(`<div id="html_369f8057c7345455090887b646ec8069" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Logis Hotel la Ferme</b><br>       <span>📍 Avignon</span><br>       <span>⭐ 8.7/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Outdoor swimming pool, Free parking, Free Wifi, Restaurant, Non-smoking rooms, Garden, Tea/Coffee Maker in All Rooms, Bar, Very Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/logis-de-france-la-ferme.html?aid=304142&amp;label=gen173nr-10CAQoggJCDnNlYXJjaF9hdmlnbm9uSDNYBGhNiAEBmAEzuAEHyAEM2AED6AEB-AEBiAIBqAIBuALnjf7EBsACAdICJDZmMTI3OWY2LThkYzctNGY5Zi1iMjJhLWM1ZjdiZDg5MDNkMNgCAeACAQ&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=17&amp;hapos=17&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=4bad8733144701d2&amp;srepoch=1755285332&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_acd2df781b578111619f7258880d02ef.setContent(html_369f8057c7345455090887b646ec8069);
+            
+        
+
+        marker_1aac554b6f92f946ada4a60f1691b6b4.bindPopup(popup_acd2df781b578111619f7258880d02ef)
+        ;
+
+        
+    
+    
+            marker_1aac554b6f92f946ada4a60f1691b6b4.bindTooltip(
+                `<div>
+                     Logis Hotel la Ferme — Avignon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1aac554b6f92f946ada4a60f1691b6b4.setIcon(icon_f8481c420e102c00e0f0eeb87da37b1d);
+            
+    
+            var marker_19bad89164df36640d6277ec0a4a0ea3 = L.marker(
+                [43.227147, 2.3964],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_57197e1058e1ae67f596b256007a43cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_428d3719c34d94df2d7283e1cbc76cc5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_23b9f87b789b1a2eefbbdd0dcc2f8903 = $(`<div id="html_23b9f87b789b1a2eefbbdd0dcc2f8903" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Hôtel La Bastide Saint Martin</b><br>       <span>📍 Carcassonne</span><br>       <span>⭐ 9.1/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Outdoor swimming pool, Free parking, Free Wifi, Non-smoking rooms, BBQ facilities, Terrace, Bar, Exceptional Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/hostellerie-saint-martin-carcassonne.html?aid=304142&amp;label=gen173nr-10CAQoggJCEnNlYXJjaF9jYXJjYXNzb25uZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCmo_-xAbAAgHSAiQzMWE1MjFjZi02YWE1LTRkYmMtOGI5OS04MzliYTZlOTE2ZmPYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=2&amp;hapos=2&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=7f18878d3d8b04ba&amp;srepoch=1755285424&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_428d3719c34d94df2d7283e1cbc76cc5.setContent(html_23b9f87b789b1a2eefbbdd0dcc2f8903);
+            
+        
+
+        marker_19bad89164df36640d6277ec0a4a0ea3.bindPopup(popup_428d3719c34d94df2d7283e1cbc76cc5)
+        ;
+
+        
+    
+    
+            marker_19bad89164df36640d6277ec0a4a0ea3.bindTooltip(
+                `<div>
+                     Hôtel La Bastide Saint Martin — Carcassonne
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_19bad89164df36640d6277ec0a4a0ea3.setIcon(icon_57197e1058e1ae67f596b256007a43cf);
+            
+    
+            var marker_b1a8259f34274c3120da9d55f90f7058 = L.marker(
+                [43.206838, 2.382095],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_f41a423c0119cd538f7f724c018c1b72 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a1fd53054ee74b2d4ae184dc4a53a73a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b2f1b40b501089c01f747ce235a8c532 = $(`<div id="html_b2f1b40b501089c01f747ce235a8c532" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Le Meez</b><br>       <span>📍 Carcassonne</span><br>       <span>⭐ 9.1/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Outdoor swimming pool, Free parking, Spa, Free Wifi, Family rooms, Restaurant, Non-smoking rooms, Tea/Coffee Maker in All Rooms, Bar, Very Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/le-meez-carcassonne.html?aid=304142&amp;label=gen173nr-10CAQoggJCEnNlYXJjaF9jYXJjYXNzb25uZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCmo_-xAbAAgHSAiQzMWE1MjFjZi02YWE1LTRkYmMtOGI5OS04MzliYTZlOTE2ZmPYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=24&amp;hapos=24&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=7f18878d3d8b04ba&amp;srepoch=1755285564&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_a1fd53054ee74b2d4ae184dc4a53a73a.setContent(html_b2f1b40b501089c01f747ce235a8c532);
+            
+        
+
+        marker_b1a8259f34274c3120da9d55f90f7058.bindPopup(popup_a1fd53054ee74b2d4ae184dc4a53a73a)
+        ;
+
+        
+    
+    
+            marker_b1a8259f34274c3120da9d55f90f7058.bindTooltip(
+                `<div>
+                     Le Meez — Carcassonne
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b1a8259f34274c3120da9d55f90f7058.setIcon(icon_f41a423c0119cd538f7f724c018c1b72);
+            
+    
+            var marker_df7aaf6e6ce5f8cabc9e970513bd344b = L.marker(
+                [43.205627, 2.362696],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_a411cddbafa65b50813c8b28c43c7bb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4b951bb95c1996fc021a6bafa1e45a34 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a2f45916abc43d059e15758be02f0549 = $(`<div id="html_a2f45916abc43d059e15758be02f0549" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Hotel de la Cité Carcassonne - MGallery Collection</b><br>       <span>📍 Carcassonne</span><br>       <span>⭐ 8.9/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Outdoor swimming pool, Private Parking, Spa, Free Wifi, Family rooms, 3 restaurants, Non-smoking rooms, Tea/Coffee Maker in All Rooms, Bar, Very Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/hotel-de-la-cite.html?aid=304142&amp;label=gen173nr-10CAQoggJCEnNlYXJjaF9jYXJjYXNzb25uZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCmo_-xAbAAgHSAiQzMWE1MjFjZi02YWE1LTRkYmMtOGI5OS04MzliYTZlOTE2ZmPYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=13&amp;hapos=13&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=7f18878d3d8b04ba&amp;srepoch=1755285493&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_4b951bb95c1996fc021a6bafa1e45a34.setContent(html_a2f45916abc43d059e15758be02f0549);
+            
+        
+
+        marker_df7aaf6e6ce5f8cabc9e970513bd344b.bindPopup(popup_4b951bb95c1996fc021a6bafa1e45a34)
+        ;
+
+        
+    
+    
+            marker_df7aaf6e6ce5f8cabc9e970513bd344b.bindTooltip(
+                `<div>
+                     Hotel de la Cité Carcassonne - MGallery Collection — Carcassonne
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_df7aaf6e6ce5f8cabc9e970513bd344b.setIcon(icon_a411cddbafa65b50813c8b28c43c7bb5);
+            
+    
+            var marker_e7cf6082dcb8236a903959bd8615e277 = L.marker(
+                [45.189285, 5.71862],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_ec73431cf3e0fc8063e6f9955efd9e66 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_079d95d3cd5a924d18037cbf2f84bf52 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_36751a18f1e4d40dbb18ac8eddb76569 = $(`<div id="html_36751a18f1e4d40dbb18ac8eddb76569" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>1924 Hôtel</b><br>       <span>📍 Grenoble</span><br>       <span>⭐ 8.9/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Free Wifi, Non-smoking rooms, Airport shuttle, 24-hour front desk, Bar, Wonderful Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/royal-grenoble.html?aid=304142&amp;label=gen173nr-10CAQoggJCD3NlYXJjaF9ncmVub2JsZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCyZD-xAbAAgHSAiQ2OTQ5OThjOS0wMGY4LTRiMmMtYTFiYy0wMjMzMmRhOTA5NmXYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=15&amp;hapos=15&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=d59687e4248607e7&amp;srepoch=1755285680&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_079d95d3cd5a924d18037cbf2f84bf52.setContent(html_36751a18f1e4d40dbb18ac8eddb76569);
+            
+        
+
+        marker_e7cf6082dcb8236a903959bd8615e277.bindPopup(popup_079d95d3cd5a924d18037cbf2f84bf52)
+        ;
+
+        
+    
+    
+            marker_e7cf6082dcb8236a903959bd8615e277.bindTooltip(
+                `<div>
+                     1924 Hôtel — Grenoble
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e7cf6082dcb8236a903959bd8615e277.setIcon(icon_ec73431cf3e0fc8063e6f9955efd9e66);
+            
+    
+            var marker_d0498f5242773e3e233a30360006c6bd = L.marker(
+                [45.184101, 5.732948],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_d9b5d3c34a1d43addcf79052bf9534fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b582df9290ee6426335e0db759d4709b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2667f3c64e81417ab39c8efc133bb419 = $(`<div id="html_2667f3c64e81417ab39c8efc133bb419" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Park Hotel Grenoble - MGallery Collection</b><br>       <span>📍 Grenoble</span><br>       <span>⭐ 8.8/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Parking, Free Wifi, Fitness center, Family rooms, Restaurant, Non-smoking rooms, Facilities for disabled guests, 24-hour front desk, Bar, Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/park-grenoble.html?aid=304142&amp;label=gen173nr-10CAQoggJCD3NlYXJjaF9ncmVub2JsZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCyZD-xAbAAgHSAiQ2OTQ5OThjOS0wMGY4LTRiMmMtYTFiYy0wMjMzMmRhOTA5NmXYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=25&amp;hapos=25&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=d59687e4248607e7&amp;srepoch=1755285743&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_b582df9290ee6426335e0db759d4709b.setContent(html_2667f3c64e81417ab39c8efc133bb419);
+            
+        
+
+        marker_d0498f5242773e3e233a30360006c6bd.bindPopup(popup_b582df9290ee6426335e0db759d4709b)
+        ;
+
+        
+    
+    
+            marker_d0498f5242773e3e233a30360006c6bd.bindTooltip(
+                `<div>
+                     Park Hotel Grenoble - MGallery Collection — Grenoble
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0498f5242773e3e233a30360006c6bd.setIcon(icon_d9b5d3c34a1d43addcf79052bf9534fc);
+            
+    
+            var marker_a3a6dd2689b7ada8ad0fc28639e9f851 = L.marker(
+                [45.195811, 5.725447],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_6151ab7e3cb05eb4cccb6719ab0ef5b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0a81db7d715cc40b7e8abff5fbbc0768 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a4682ec89c270dc82ab66b03108a8d3c = $(`<div id="html_a4682ec89c270dc82ab66b03108a8d3c" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>The Babel Community Hôtel - Grenoble Bastille</b><br>       <span>📍 Grenoble</span><br>       <span>⭐ 8.6/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Free parking, Free Wifi, Family rooms, Restaurant, Non-smoking rooms, Bar, Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/apt-paisible-en-centre-ville-parking-salle-de-sport-bar-en-rooftop.html?aid=304142&amp;label=gen173nr-10CAQoggJCD3NlYXJjaF9ncmVub2JsZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgCyZD-xAbAAgHSAiQ2OTQ5OThjOS0wMGY4LTRiMmMtYTFiYy0wMjMzMmRhOTA5NmXYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=5&amp;hapos=5&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=d59687e4248607e7&amp;srepoch=1755285617&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_0a81db7d715cc40b7e8abff5fbbc0768.setContent(html_a4682ec89c270dc82ab66b03108a8d3c);
+            
+        
+
+        marker_a3a6dd2689b7ada8ad0fc28639e9f851.bindPopup(popup_0a81db7d715cc40b7e8abff5fbbc0768)
+        ;
+
+        
+    
+    
+            marker_a3a6dd2689b7ada8ad0fc28639e9f851.bindTooltip(
+                `<div>
+                     The Babel Community Hôtel - Grenoble Bastille — Grenoble
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a3a6dd2689b7ada8ad0fc28639e9f851.setIcon(icon_6151ab7e3cb05eb4cccb6719ab0ef5b1);
+            
+    
+            var marker_17aa51ff192662a9eab11dff58b9eabb = L.marker(
+                [43.61177, 1.421825],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_644a49f7d40fe2982ffa40d1052b937b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1825038ddaa8d766b25db6a9353b67de = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_e2c327c81f3e23ec1069bb0518c23756 = $(`<div id="html_e2c327c81f3e23ec1069bb0518c23756" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Residhome Toulouse Ponts Jumeaux</b><br>       <span>📍 Toulouse</span><br>       <span>⭐ 8.9/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Private Parking, Free Wifi, Family rooms, Non-smoking rooms, Facilities for disabled guests, 24-hour front desk, Terrace, Very Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/residhome-toulouse-ponts-jumeaux.html?aid=304142&amp;label=gen173nr-10CAQoggJCD3NlYXJjaF90b3Vsb3VzZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC9pH-xAbAAgHSAiRmN2Y1ZGQ5My02Nzg0LTRlZGEtYTdiMS0wMGJjZmIyZTkwYzbYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=1&amp;hapos=1&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=6d71883b13500377&amp;srepoch=1755285753&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_1825038ddaa8d766b25db6a9353b67de.setContent(html_e2c327c81f3e23ec1069bb0518c23756);
+            
+        
+
+        marker_17aa51ff192662a9eab11dff58b9eabb.bindPopup(popup_1825038ddaa8d766b25db6a9353b67de)
+        ;
+
+        
+    
+    
+            marker_17aa51ff192662a9eab11dff58b9eabb.bindTooltip(
+                `<div>
+                     Residhome Toulouse Ponts Jumeaux — Toulouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_17aa51ff192662a9eab11dff58b9eabb.setIcon(icon_644a49f7d40fe2982ffa40d1052b937b);
+            
+    
+            var marker_0b96b76d6d72716fd773eda56fc99a71 = L.marker(
+                [43.591995, 1.404061],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_69b4db77fa6ed93a99266db4eb205b9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bdf3f6e1311f5b056646719b7f3f026 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_28ba53dcc52519a67730d6cb56e2bdd6 = $(`<div id="html_28ba53dcc52519a67730d6cb56e2bdd6" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Alezan Hôtel &amp; Résidence</b><br>       <span>📍 Toulouse</span><br>       <span>⭐ 8.8/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Free parking, Free Wifi, Family rooms, Non-smoking rooms, Facilities for disabled guests, Elevator, Terrace, Wonderful Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/alezan-residence.html?aid=304142&amp;label=gen173nr-10CAQoggJCD3NlYXJjaF90b3Vsb3VzZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC9pH-xAbAAgHSAiRmN2Y1ZGQ5My02Nzg0LTRlZGEtYTdiMS0wMGJjZmIyZTkwYzbYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=5&amp;hapos=5&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=6d71883b13500377&amp;srepoch=1755285792&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_2bdf3f6e1311f5b056646719b7f3f026.setContent(html_28ba53dcc52519a67730d6cb56e2bdd6);
+            
+        
+
+        marker_0b96b76d6d72716fd773eda56fc99a71.bindPopup(popup_2bdf3f6e1311f5b056646719b7f3f026)
+        ;
+
+        
+    
+    
+            marker_0b96b76d6d72716fd773eda56fc99a71.bindTooltip(
+                `<div>
+                     Alezan Hôtel & Résidence — Toulouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0b96b76d6d72716fd773eda56fc99a71.setIcon(icon_69b4db77fa6ed93a99266db4eb205b9d);
+            
+    
+            var marker_e66d8ffa0fd39cb433323ba49b82904e = L.marker(
+                [43.609079, 1.427484],
+                {
+}
+            ).addTo(marker_cluster_ac96cf59a783287f31b469940ed2c8d6);
+        
+    
+            var icon_ed62c7f5c4564b477559b928771ee207 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8714577d004ae22ff7f23a6effbc6c67 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_a59ca7f9da2c439fa3435e00d254bf4a = $(`<div id="html_a59ca7f9da2c439fa3435e00d254bf4a" style="width: 100.0%; height: 100.0%;">     <div style="font-family:system-ui, -apple-system, Segoe UI, Roboto; font-size:13px;">       <b>Appart Hotel Odalys City Toulouse Centre Compans Caffarelli</b><br>       <span>📍 Toulouse</span><br>       <span>⭐ 8.7/10</span><br>       <b>Points forts :</b>       <ul style="margin:4px 0 0 16px;"><li>Free Wifi, Airport shuttle, Family rooms, Non-smoking rooms, Facilities for disabled guests, 24-hour front desk, Elevator, Garden, Terrace, Very Good Breakfast</li></ul>       <a href="https://www.booking.com/hotel/fr/odalys-city-centre-compans-caffarelli.html?aid=304142&amp;label=gen173nr-10CAQoggJCD3NlYXJjaF90b3Vsb3VzZUgzWARoTYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC9pH-xAbAAgHSAiRmN2Y1ZGQ5My02Nzg0LTRlZGEtYTdiMS0wMGJjZmIyZTkwYzbYAgHgAgE&amp;ucfs=1&amp;arphpl=1&amp;group_adults=2&amp;req_adults=2&amp;no_rooms=1&amp;group_children=0&amp;req_children=0&amp;hpos=11&amp;hapos=11&amp;sr_order=popularity&amp;nflt=ht_id%3D204&amp;srpvid=6d71883b13500377&amp;srepoch=1755285832&amp;from=searchresults" target="_blank">Voir sur Booking</a>     </div>     </div>`)[0];
+                popup_8714577d004ae22ff7f23a6effbc6c67.setContent(html_a59ca7f9da2c439fa3435e00d254bf4a);
+            
+        
+
+        marker_e66d8ffa0fd39cb433323ba49b82904e.bindPopup(popup_8714577d004ae22ff7f23a6effbc6c67)
+        ;
+
+        
+    
+    
+            marker_e66d8ffa0fd39cb433323ba49b82904e.bindTooltip(
+                `<div>
+                     Appart Hotel Odalys City Toulouse Centre Compans Caffarelli — Toulouse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e66d8ffa0fd39cb433323ba49b82904e.setIcon(icon_ed62c7f5c4564b477559b928771ee207);
+            
+    
+            marker_cluster_ac96cf59a783287f31b469940ed2c8d6.addTo(map_5127a2e467a59df1edc8e5d4b7ee7003);
+        
+    
+            map_5127a2e467a59df1edc8e5d4b7ee7003.fitBounds(
+                [[43.205627, 1.404061], [45.195811, 5.732948]],
+                {}
+            );
+        
+</script>
+</html>

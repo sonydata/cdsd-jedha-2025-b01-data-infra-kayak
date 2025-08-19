@@ -12,7 +12,7 @@
 **Previews (click):**  
 [![Destinations](maps/Top5destinations.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html)
 
-[![Hotels](maps/Top20hotels_copy.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html)
+[![Hotels](maps/Top20hotels_zoom_example.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html)
 
 ---
 

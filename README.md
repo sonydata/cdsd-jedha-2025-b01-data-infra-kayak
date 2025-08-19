@@ -1,6 +1,6 @@
 # CDSD (Jedha) — Bloc 1 · Data Infrastructure · Kayak / Booking
 
-**TL;DR:** Data Lake → DWH pipeline that ranks **French destinations** using **7-day weather** + **hotel** data, with **interactive maps**.
+Data Lake → Data Warehouse pipeline that ranks **French destinations** using **7-day weather** + **hotel** data, with **interactive maps**.
 
 ---
 

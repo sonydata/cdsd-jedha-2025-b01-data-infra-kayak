@@ -57,12 +57,9 @@ Mont Saint Michel, St Malo, Bayeux, Le Havre, Rouen, Paris, Amiens, Lille, Stras
 Static screenshots for quick viewing on GitHub.  
 Open the HTML demo or the notebook for full interactivity.
 
-![Overview map](images/map_overview.png)
-*Figure: Overview of recommended destinations (7-day window).*
-
 | Top 5 destinations | Top 20 hotels |
 |---|---|
-| ![Top 5](maps/top5_destinations.png) | ![Top 20](maps/top20hotels.png) |
+| ![Top 5](maps/top5destinations.png) | ![Top 20](maps/top20hotels.png) |
 
 **Interactive HTML:** `docs/hotel_map.html` (served via GitHub Pages)
 

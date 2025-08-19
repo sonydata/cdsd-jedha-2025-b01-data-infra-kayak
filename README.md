@@ -1,64 +1,74 @@
-# Kayak / Booking — CDSD (Jedha) · Bloc 1 · Data Infrastructure
-
-**Goal:** Build the data foundation for a **destination & hotel recommendation** prototype using **real weather** + **hotel** data, delivered via a **Data Lake → Warehouse** pipeline and **interactive maps**.
-
----
-
-## Live
-- 🗺️ **Destinations (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html  
-- 🏨 **Hotels (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html  
-- 📓 **Colab (maps only):** [Open in Colab](https://colab.research.google.com/drive/107LhXhZRFf22gu39KB2NhP3dPIQyRocl?usp=sharing)
-
-**Previews (click):**  
-[![Destinations](maps/Top5destinations.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html)
-
-[![Hotels](maps/Top20hotels_zoom_example.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html)
+# Kayak — Building a Data Architecture (CDSD · Jedha · Bloc 1)
+**Author:** @sonydata
 
 ---
 
-## Project (context)
-- **User research:** ~**70%** of planners want **more destination information** and trust content from known brands.  
-- **Objective:** enable an application that can recommend **where to go next** and **which hotels to consider**, based on **current weather** and **nearby hotels**.  
-- **This repo (Phase 1):** collect data, land in a **data lake**, **clean/transform**, load into a **warehouse**, and ship **interactive map prototypes**.
+## 📄 Description
+This project centralizes, cleans, and visualizes **7-day weather** and **hotel** data for French cities.  
+Goal: prepare the **data foundation** for an application that helps users decide **where to go** and **which hotels to consider**, using **live data**.
 
-## Goals
-- Scrape data from **destinations**.  
-- Get **weather** data for each destination.  
-- Get **hotel** info for each destination.  
-- Store everything in a **data lake (S3)**.  
-- **Extract, Transform, Load** cleaned data from the lake into a **data warehouse (AWS RDS)**.
+**Live previews (clickable)**
+- **Destinations (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html  
+  [![Destinations](maps/Top5destinations.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html)
 
----
-
-## Pipeline
-Acquire → Clean / Transform → Load (Warehouse) → Prototype Maps
-Nominatim, OpenWeather, Booking └─ City_ID join, types └─ staged load + upserts └─ Plotly/Folium HTML+PNG
+- **Hotels (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html  
+  [![Hotels](maps/Top20hotels_zoom_example.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html)
 
 ---
 
-## Steps & key files
-| Path | Purpose | Output |
-|---|---|---|
-| `Weather_data_API.ipynb` | Geocode cities (Nominatim) + fetch 7-day weather (OpenWeather) | `files for S3/Weather-data-sorted-*.csv` |
-| `booking_scraping_final.py` | Booking.com scrape (name, URL, coords, rating, reviews, amenities, distance) | `hotels_clean.csv` |
-| `SQLAlchemy.ipynb` | Clean + merge on `City_ID` → staged load + **idempotent upserts** to RDS | optional export: `clean_hotel_weather_data_RDS.csv` |
-| `docs/top5destinations.html` | Destination map prototype (GitHub Pages) | preview: `maps/Top5destinations.png` |
-| `docs/top20hotels-v2.html` | Hotels map prototype (GitHub Pages) | preview: `maps/top20hotels.png` |
-| `files for S3/` | Lake-ready CSVs | enriched weather + hotels + `city_id` |
-| `S3bucket_content.png` | Data Lake proof | screenshot |
+## 🧱 Project architecture
+The repo is organized into **2 notebooks** and **1 Python script**:
 
-**Core transforms:** `Rate→float`, `Number of Reviews→int`, tidy column names; weather `dt→Date`; `INNER JOIN` on `City_ID`; drop duplicate geo columns; rename (`Date→Weather_Date`, `Min/Max→*_Temp`); put `City_ID` first.  
-**Weather rule of thumb (prototype):** `avg_max_temp>10 °C`, `rain_prob≤0.25`, `avg_clouds<55%`, `wind<7 m/s`.
+### 1) `Weather_data_API.ipynb` — **Data acquisition**
+- Get **GPS coordinates** for cities via **Nominatim** (OpenStreetMap).
+- Pull **7-day daily weather** from **OpenWeather One-Call** (`temp`, `pop`, `rain`, `humidity`, `clouds`, `wind`, …).
+- Export results as **CSV** → **`files for S3/`** (Data Lake).
+
+### 2) Booking.com scraping script
+- `booking_scraping_final.py`  
+  - Extract name, URL, lat/lon, **rating**, **review count**, **amenities**, **neighborhood**, **distance from center**.  
+  - Output: `hotels_clean.csv`.  
+  - ⚠️ Educational scraping only (polite headers, throttling, low volume).
+
+### 3) `SQLAlchemy.ipynb` — **ETL pipeline (Lake → Warehouse)**
+- Load weather + hotel CSVs and **normalize** schemas/types.
+- **Merge** weather × hotels using **`City_ID`**; drop duplicate cols; rename leftovers.
+- **Load to AWS RDS** 
+- Export sample: `hotel_weather_cleaned_data.csv`.  
+- Data Lake proof: `S3bucket_content.png`.
+
+### 4) **Interactive maps** — (Colab + HTML in `docs/`)
+- **Destinations**: next-week view (Plotly).
+- **Hotels**: **Folium** map with **city layer selector**, rich popups (rating, reviews, neighborhood, amenities, distance, Booking link).
+- Export **HTML** to `docs/` and publish via **GitHub Pages**.
 
 ---
 
-## Data sources
+## 🔌 Data sources
 - **Geocoding:** Nominatim `/search` → `lat/lon` (no key).  
-- **Weather:** OpenWeather **One-Call** (7-day daily: `temp`, `pop`, `rain`, `humidity`, `clouds`, `wind`).  
-- **Hotels (Booking.com):** name, URL, coordinates, rating, reviews, amenities, distance from center.  
-  *Educational scraping only (polite headers, throttling).*
+- **Weather:** OpenWeather **One-Call** (7-day daily).  
+- **Hotels (Booking.com):** name, URL, coordinates, rating, reviews, amenities, neighborhood, distance.
 
 ---
 
-## Tools
-Python 3.10+, pandas, numpy, requests, **plotly**, **folium**, SQLAlchemy · AWS **S3**/**RDS** · Nominatim, OpenWeather · `.env`
+## 🧰 Technologies & tools
+**Python 3.10+**, pandas, numpy, requests, **Plotly**, **Folium**, **SQLAlchemy** · **AWS S3** (Data Lake) & **AWS RDS** (Warehouse) · Nominatim, OpenWeather · `.env` for secrets
+
+---
+
+## 📊 Results
+- **Data Lake (S3):** enriched **weather + hotels + `city_id`** → [`files for S3/`](./files%20for%20S3/)  
+  ![S3 bucket](S3bucket_content.png)
+- **Data Warehouse (RDS):** **cleaned, merged** table (sample export) → [`hotel_weather_cleaned_data.csv`](./hotel_weather_cleaned_data.csv)
+- **Interactive maps:** published via GitHub Pages  
+  - Destinations (HTML): https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html  
+  - Hotels (HTML): https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html
+
+---
+
+## ▶️ Next steps
+- Compute a **recommendation score** (weather × rating × reviews; optionally price/availability).  
+- Add dynamic filters (budget, stars, amenities, date range) and ship a **Streamlit** UI.  
+- Schedule a weekly refresh with caching.
+
+> Booking.com data collected **for educational purposes only**, with respectful access patterns (headers, throttling).

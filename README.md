@@ -59,7 +59,7 @@ Open the HTML demo or the notebook for full interactivity.
 
 | Top 5 destinations | Top 20 hotels |
 |---|---|
-| ![Top 5](maps/top5destinations.png) | ![Top 20](maps/top20hotels.png) |
+| ![Top 5](maps/Top5destinations.png) | ![Top 20](maps/top20hotels.png) |
 
 **Interactive HTML:** `docs/hotel_map.html` (served via GitHub Pages)
 

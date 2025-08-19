@@ -5,13 +5,13 @@
 ---
 
 ## Live
-- 🗺️ **Destinations (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top5destinations_final.html  
-- 🏨 **Hotels (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top_hotels_5cities_layers.html  
+- 🗺️ **Destinations (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html  
+- 🏨 **Hotels (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html  
 - 📓 **Colab (maps only):** [Open in Colab](https://colab.research.google.com/drive/107LhXhZRFf22gu39KB2NhP3dPIQyRocl?usp=sharing)
 
 **Previews (click):**  
-[![Destinations](maps/Top5destinations.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top5destinations_final.html)
-[![Hotels](maps/top20hotels.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/top_hotels_5cities_layers.html)
+[![Destinations](maps/Top5destinations.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html)
+[![Hotels](maps/top20hotels.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top_hotels_5cities_layers.html)
 
 ---
 

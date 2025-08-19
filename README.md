@@ -1,9 +1,5 @@
 # CDSD (Jedha) — Bloc 1 · Data Infrastructure · **Kayak / Booking**
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sonydata/cdsd-jedha-2025-b01-p01-data-infra-kayak/blob/main/notebooks/kayak_maps.ipynb)
-[![nbviewer](https://img.shields.io/badge/view-nbviewer-blue)](https://nbviewer.org/github/sonydata/cdsd-jedha-2025-b01-p01-data-infra-kayak/blob/main/notebooks/kayak_maps.ipynb)
-[![GitHub Pages](https://img.shields.io/badge/demo-HTML%20map-success)](https://sonydata.github.io/cdsd-jedha-2025-b01-p01-data-infra-kayak/hotel_map.html)
-
 > **One-liner:** Data Lake → Data Warehouse pipeline for Kayak’s “Best Destinations in France” prototype, mixing **weather** + **hotel** data and publishing interactive **maps**.
 
 ---
@@ -43,7 +39,7 @@ Mont Saint Michel, St Malo, Bayeux, Le Havre, Rouen, Paris, Amiens, Lille, Stras
 
 ---
 
-## 🦮 Helpers & data sources
+## 🦮 Data sources
 - **Geocoding:** https://nominatim.org/ (no API key). Use `/search` to get **lat/lon** for each city.  
 - **Weather:** https://openweathermap.org/api/one-call-api (free API key via https://openweathermap.org/appid). Pull 7-day daily metrics (`temp`, `pop`, `rain`, `humidity`, etc.).  
 - **Hotels (Booking.com):** scrape for:
@@ -66,7 +62,7 @@ Open the HTML demo or the notebook for full interactivity.
 
 | Top 5 destinations | Top 20 hotels |
 |---|---|
-| ![Top 5](images/top5_map.png) | ![Top 20](images/city_hotels_map.png) |
+| ![Top 5](maps/top5_destinations.png) | ![Top 20](maps/top20hotels.png) |
 
 **Interactive HTML:** `docs/hotel_map.html` (served via GitHub Pages)
 
@@ -77,7 +73,7 @@ Open the HTML demo or the notebook for full interactivity.
   - Cities → **Nominatim** (lat/lon)
   - Lat/lon → **OpenWeather One-Call** (7-day)
   - City → **Booking.com** scrape (hotels)
-- **Data Lake (S3):** store raw + enriched CSVs
+- **Data Lake (S3):** store raw CSVs
 - **Warehouse (AWS RDS / Postgres or MySQL):**
   - create schema & tables
   - load cleaned, deduped, typed data (idempotent upserts)
@@ -93,18 +89,3 @@ Open the HTML demo or the notebook for full interactivity.
   - **Top-20 hotels** (by score/filters)
 
 ---
-
-## ▶️ How to run
-
-### Option A — Colab (no setup)
-Click **Open in Colab** above → *Runtime → Run all*.  
-The notebook will: fetch data, score cities, create maps, and write:
-- CSV to `/data/` (or directly to S3 if creds are set)
-- HTML map to `docs/hotel_map.html`
-- PNG screenshots to `images/`
-
-### Option B — Local
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-jupyter lab

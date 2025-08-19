@@ -39,7 +39,7 @@ Mont Saint Michel, St Malo, Bayeux, Le Havre, Rouen, Paris, Amiens, Lille, Stras
 ## 🔄 Pipeline 
 1. **Ingest (Python/Colab):** cities → Nominatim (coords) → OpenWeather (7-day) + Booking scrape (hotels).
 2. **Data Lake (S3):** store raw/enriched CSVs.
-3. **ETL → DWH (AWS RDS):** normalize schemas & types, select/validate fields, enrich via City_ID join, then load curated tables with repeatable (idempotent) upserts.
+3. **ETL → DWH (AWS RDS):** normalize schemas & types, select/validate fields, enrich via City_ID join, then load curated merged table.
 4. **Analytics:** Plotly maps → export **HTML** + **PNG**.
 
 ---

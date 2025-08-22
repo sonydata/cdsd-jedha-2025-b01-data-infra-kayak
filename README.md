@@ -5,9 +5,10 @@
 
 ## 📄 Description
 This project centralizes, cleans, and visualizes **7-day weather** and **hotel** data for French cities.  
+
 Goal: prepare the **data foundation** for an application that helps users decide **where to go** and **which hotels to consider**, using **live data**.
 
-**Live previews (clickable)**
+**Previews (clickable)**
 - **Destinations (HTML):** https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html  
   [![Destinations](maps/Top5destinations.png)](https://sonydata.github.io/cdsd-jedha-2025-b01-data-infra-kayak/top5destinations_final.html)
 
